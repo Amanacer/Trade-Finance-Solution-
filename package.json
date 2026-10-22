@@ -1,0 +1,108 @@
+
+{
+  "name": "Trade-Finance-Solution",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "^10",
+    "@sap/cds-mtxs": "^4",
+    "@sap/xssec": "^4",
+    "@cap-js/audit-logging": ">=0",
+    "@cap-js/notifications": "*"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "@sap/cds-dk": "^10",
+    "cds-plugin-ui5": "^0.17.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.49"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-bank-guarantee-management": "cds watch --open com.sms.tradefinance.bg.bankguaranteemanagement/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy Trade-Finance-Solution --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-lc1": "cds watch --open com.carvsol.tradefinance.lc.lc1/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "admin": {
+            "password": "admin",
+            "roles": ["authenticated-user", "Admin"]
+          },
+          "bgmaker": {
+            "password": "bgmaker",
+            "roles": ["authenticated-user", "BGMaker"]
+          },
+          "bgapprover": {
+            "password": "bgapprover",
+            "roles": ["authenticated-user", "BGApprover"]
+          },
+          "bgseniorapprover": {
+            "password": "bgseniorapprover",
+            "roles": ["authenticated-user", "BGSeniorApprover"]
+          },
+          "bgfinanceapprover": {
+            "password": "bgfinanceapprover",
+            "roles": ["authenticated-user", "BGFinanceApprover"]
+          },
+          "bgauthorizedsignatory": {
+            "password": "bgauthorizedsignatory",
+            "roles": ["authenticated-user", "BGAuthorizedSignatory"]
+          },
+          "lcmaker": {
+            "password": "lcmaker",
+            "roles": ["authenticated-user", "LCMaker"]
+          },
+          "flcdeveloper": {
+            "password": "flcdeveloper",
+            "roles": ["authenticated-user", "LCMaker", "LCApprover", "Finance", "Admin", "IntegrationOperator", "ReadOnly"]
+          },
+          "lcapprover": {
+            "password": "lcapprover",
+            "roles": ["authenticated-user", "LCApprover"]
+          },
+          "finance": {
+            "password": "finance",
+            "roles": ["authenticated-user", "Finance"]
+          },
+          "readonly": {
+            "password": "readonly",
+            "roles": ["authenticated-user", "ReadOnly"]
+          },
+          "integration": {
+            "password": "integration",
+            "roles": ["authenticated-user", "IntegrationOperator"]
+          }
+        }
+      },
+      "[production]": {
+        "auth": "xsuaa",
+        "multitenancy": true
+      },
+      "[with-mtx]": {
+        "multitenancy": true
+      },
+      "messaging": {
+        "kind": "enterprise-messaging"
+      },
+      "connectivity": true,
+      "destinations": true
+    },
+    "profile": "with-mtx-sidecar"
+  },
+  "workspaces": ["app/*"],
+  "sapux": [
+    "app/bank-guarantee-management",
+    "app/lc1"
+  ]
+}

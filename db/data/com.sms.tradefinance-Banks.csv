@@ -1,0 +1,6 @@
+ID,bankCode,bankName,active,createdAt,createdBy,modifiedAt,modifiedBy
+BANK-0001,SBIN,State Bank of India,true,2026-10-15T09:00:00,system,,
+BANK-0002,HDFC,HDFC Bank,true,2026-10-15T09:00:00,system,,
+BANK-0003,ICICI,ICICI Bank,true,2026-10-15T09:00:00,system,,
+BANK-0004,AXIS,Axis Bank,true,2026-10-15T09:00:00,system,,
+BANK-0005,PNB,Punjab National Bank,true,2026-10-15T09:00:00,system,,

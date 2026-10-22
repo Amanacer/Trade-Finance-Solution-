@@ -1,0 +1,6 @@
+ID,bg_ID,bank_ID,bankLimit_ID,sanctionedLimit,utilisedLimit,reservedLimit,availableLimit,commissionRate,marginPercent,fixedCharges,gstOnCharges,totalCharges,selected,selectionReason,reservation_ID,createdAt,createdBy,modifiedAt,modifiedBy
+BGBC-0001,BG-REQ-0001,BANK-0001,BL-0001,10000000,2000000,500000,7500000,0.75,10,1500,270,5520,true,Lowest charges with sufficient available bank limit,BLR-0001,2026-10-15T09:00:00,aman.singh,,
+BGBC-0002,BG-REQ-0001,BANK-0002,BL-0002,8000000,2500000,1000000,4500000,0.85,15,2000,360,8860,false,Higher charges and lower available limit,,2026-10-15T09:05:00,aman.singh,,
+BGBC-0003,BG-REQ-0002,BANK-0002,BL-0003,12000000,3000000,1500000,7500000,0.80,10,1800,324,6124,true,Competitive commission and adequate available limit,BLR-0002,2026-10-15T10:00:00,maker.user,,
+BGBC-0004,BG-REQ-0002,BANK-0003,BL-0004,6000000,2000000,500000,3500000,1.00,20,2500,450,10950,false,Lower available limit and higher margin requirement,,2026-10-15T10:05:00,maker.user,,
+BGBC-0005,BG-REQ-0003,BANK-0001,BL-0005,15000000,4000000,1000000,10000000,0.70,5,1200,216,4416,true,Competitive pricing and sufficient sanctioned limit,BLR-0003,2026-10-15T11:00:00,aman.singh,,

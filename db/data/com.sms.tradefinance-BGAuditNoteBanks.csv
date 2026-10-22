@@ -1,0 +1,6 @@
+ID,note_ID,bank_ID,availableLimit,annualRate,commissionAmount,fixedCharges,gstAmount,totalCharges,recommended,remarks,createdAt,createdBy,modifiedAt,modifiedBy
+BGC-0001,BGN-0001,BANK-0001,5000000,0.75,3750,1500,945,6195,true,Lowest overall charges with sufficient bank limit,2026-10-15T09:00:00,aman.singh,,
+BGC-0002,BGN-0001,BANK-0002,4000000,0.85,4250,2000,1125,7375,false,Higher commission and fixed charges,2026-10-15T09:05:00,aman.singh,,
+BGC-0003,BGN-0001,BANK-0003,3000000,1.00,5000,2500,1350,8850,false,Available limit is lower than preferred option,2026-10-15T09:10:00,aman.singh,,
+BGC-0004,BGN-0002,BANK-0001,4500000,0.70,3150,1200,783,5133,true,Competitive charges and adequate available limit,2026-10-15T10:00:00,aman.singh,,
+BGC-0005,BGN-0002,BANK-0002,3500000,0.90,4050,1800,1053,6903,false,Alternative bank quote for comparison,2026-10-15T10:05:00,aman.singh,,

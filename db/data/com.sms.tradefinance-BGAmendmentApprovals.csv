@@ -1,0 +1,6 @@
+ID,amendment_ID,sequence,role,userId,action,remarks,actionAt,status,createdAt,createdBy,modifiedAt,modifiedBy
+AMAP-0001,BG-AMD-0001,1,BG_MAKER,aman.singh,SUBMIT,Amendment submitted for approval,2026-10-15T09:00:00,COMPLETED,2026-10-15T09:00:00,aman.singh,,
+AMAP-0002,BG-AMD-0001,2,BG_APPROVER,approver.user,APPROVE,Amendment reviewed and approved,2026-10-15T09:30:00,APPROVED,2026-10-15T09:30:00,approver.user,,
+AMAP-0003,BG-AMD-0002,1,BG_MAKER,maker.user,SUBMIT,Amendment submitted for review,2026-10-15T10:00:00,COMPLETED,2026-10-15T10:00:00,maker.user,,
+AMAP-0004,BG-AMD-0002,2,BG_APPROVER,approver.user,SEND_BACK,Beneficiary details require correction,2026-10-15T10:20:00,SENT_BACK,2026-10-15T10:20:00,approver.user,,
+AMAP-0005,BG-AMD-0003,2,BG_APPROVER,approver.user,,,,PENDING,2026-10-15T11:00:00,system,,

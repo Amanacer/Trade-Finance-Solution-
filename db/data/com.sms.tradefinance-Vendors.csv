@@ -1,0 +1,7 @@
+ID,vendorCode,name,address,taxNumber,country,active,createdAt,createdBy,modifiedAt,modifiedBy
+550e8400-e29b-41d4-a716-446655440106,V10001,Mock Industrial Supplies Ltd,Mock S4 Vendor,MOCK-10001,US,true,2026-10-06T09:00:00Z,system,,
+550e8400-e29b-41d4-a716-446655440101,VEN001,Global Trade Supplies Ltd,"London, United Kingdom",GB-DEMO-1001,GB,true,2026-10-01T09:00:00Z,system,2026-10-01T09:00:00Z,system
+550e8400-e29b-41d4-a716-446655440102,VEN002,Euro Industrial GmbH,"Frankfurt, Germany",DE-DEMO-1002,DE,true,2026-10-02T09:00:00Z,system,2026-10-02T09:00:00Z,system
+550e8400-e29b-41d4-a716-446655440103,VEN003,Pacific Components Pte Ltd,"Singapore",SG-DEMO-1003,SG,true,2026-10-03T09:00:00Z,system,2026-10-03T09:00:00Z,system
+550e8400-e29b-41d4-a716-446655440104,VEN004,Northstar Equipment Inc,"New York, United States",US-DEMO-1004,US,false,2026-10-04T09:00:00Z,system,2026-10-04T09:00:00Z,system
+550e8400-e29b-41d4-a716-446655440105,VEN005,Maple Leaf Exports Ltd,"Toronto, Canada",CA-DEMO-1005,CA,true,2026-10-05T09:00:00Z,system,2026-10-05T09:00:00Z,system

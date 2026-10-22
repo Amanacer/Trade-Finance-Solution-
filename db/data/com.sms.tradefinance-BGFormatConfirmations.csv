@@ -1,0 +1,6 @@
+ID,bg_ID,version,customerFormatDocument,bankClausesDocument,financeRemarks,operationsRemarks,status,confirmedBy,confirmedAt,createdAt,createdBy,modifiedAt,modifiedBy
+BGFC-0001,BG-REQ-0001,1,documents/bg/customer-format-0001.pdf,documents/bg/bank-clauses-0001.pdf,Financial terms verified,Operational clauses reviewed,CONFIRMED,finance.approver,2026-10-15T09:30:00,2026-10-15T09:00:00,aman.singh,,
+BGFC-0002,BG-REQ-0002,1,documents/bg/customer-format-0002.pdf,documents/bg/bank-clauses-0002.pdf,Commission and charges under review,Please verify beneficiary details,PENDING_REVIEW,,,2026-10-15T10:00:00,maker.user,,
+BGFC-0003,BG-REQ-0003,2,documents/bg/customer-format-0003-v2.pdf,documents/bg/bank-clauses-0003-v2.pdf,Revised BG amount verified,Updated clauses reviewed,CONFIRMED,finance.approver,2026-10-15T10:45:00,2026-10-15T10:15:00,maker.user,,
+BGFC-0004,BG-REQ-0004,1,documents/bg/customer-format-0004.pdf,,Charges require clarification,Bank clauses document is missing,SENT_BACK,,,2026-10-15T11:00:00,maker.user,,
+BGFC-0005,BG-REQ-0005,1,documents/bg/customer-format-0005.pdf,documents/bg/bank-clauses-0005.pdf,Financial review completed,Awaiting final operational confirmation,IN_REVIEW,,,2026-10-15T11:30:00,maker.user,,

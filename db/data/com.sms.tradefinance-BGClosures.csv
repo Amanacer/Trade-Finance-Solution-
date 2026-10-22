@@ -1,0 +1,6 @@
+ID,bg_ID,closureRequestDate,beneficiaryReleaseLetter,bankClosureConfirmation,physicalOriginalReturned,physicalReturnDate,bankCancelled,limitReleased,financialClosureDate,documentClosureDate,remarks,status,createdAt,createdBy,modifiedAt,modifiedBy
+BGC-CL-0001,BG-REQ-0001,true,true,true,true,2026-10-14,true,true,2026-10-14,2026-10-15,All closure documents received and bank limit released,CLOSED,2026-10-15,aman.singh,,
+BGC-CL-0002,BG-REQ-0002,true,true,false,false,,false,false,,,Bank closure confirmation pending,IN_PROGRESS,2026-10-15,maker.user,,
+BGC-CL-0003,BG-REQ-0003,true,false,false,false,,false,false,,,Beneficiary release letter awaited,PENDING_DOCUMENTS,2026-10-15,maker.user,,
+BGC-CL-0004,BG-REQ-0004,true,true,true,false,,true,false,2026-10-15,,Physical original guarantee not yet returned,IN_PROGRESS,2026-10-15,aman.singh,,
+BGC-CL-0005,BG-REQ-0005,true,true,true,true,2026-10-13,true,true,2026-10-14,2026-10-14,Closure completed and records archived,CLOSED,2026-10-15,approver.user,,

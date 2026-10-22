@@ -1,0 +1,6 @@
+ID,code,name,decimalPlaces,active,createdAt,createdBy,modifiedAt,modifiedBy
+CURR-001,INR,Indian Rupee,2,true,2026-10-15T09:00:00,aman.singh,,
+CURR-002,USD,US Dollar,2,true,2026-10-15T09:05:00,aman.singh,,
+CURR-003,EUR,Euro,2,true,2026-10-15T09:10:00,aman.singh,,
+CURR-004,GBP,British Pound,2,true,2026-10-15T09:15:00,aman.singh,,
+CURR-005,JPY,Japanese Yen,0,true,2026-10-15T09:20:00,aman.singh,,

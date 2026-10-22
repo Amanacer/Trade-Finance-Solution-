@@ -1,0 +1,6 @@
+ID,bg_ID,fromStatus,toStatus,action,remarks,performedBy,performedAt,createdAt,createdBy,modifiedAt,modifiedBy
+BGSH-0001,BG-REQ-0001,DRAFT,SUBMITTED,SUBMIT,BG request submitted for approval,aman.singh,2026-10-15T09:00:00,2026-10-15T09:00:00,aman.singh,,
+BGSH-0002,BG-REQ-0001,SUBMITTED,APPROVED,APPROVE,Request approved after document verification,approver.user,2026-10-15T09:30:00,2026-10-15T09:30:00,approver.user,,
+BGSH-0003,BG-REQ-0002,SUBMITTED,SENT_BACK,SEND_BACK,Beneficiary details require correction,approver.user,2026-10-15T10:15:00,2026-10-15T10:15:00,approver.user,,
+BGSH-0004,BG-REQ-0003,APPROVED,ISSUED,MARK_ISSUED,Bank guarantee issued and reference recorded,aman.singh,2026-10-15T11:00:00,2026-10-15T11:00:00,aman.singh,,
+BGSH-0005,BG-REQ-0004,DRAFT,SUBMITTED,SUBMIT,Request submitted for finance review,maker.user,2026-10-15T11:30:00,2026-10-15T11:30:00,maker.user,,

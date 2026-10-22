@@ -1,0 +1,243 @@
+_schema-version: 3.3.0
+ID: Trade-Finance-Solution
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: Trade-Finance-Solution-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: Trade-Finance-Solution-auth
+  - name: Trade-Finance-Solution-db
+  - name: Trade-Finance-Solution-messaging
+  - name: Trade-Finance-Solution-connectivity
+  - name: Trade-Finance-Solution-destination
+  - name: Trade-Finance-Solution-auditlog
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    instances: 1
+  build-parameters:
+    builder: npm-ci
+- name: Trade-Finance-Solution-mtx
+  type: nodejs
+  path: gen/mtx/sidecar
+  requires:
+  - name: Trade-Finance-Solution-auth
+  - name: Trade-Finance-Solution-db
+  - name: Trade-Finance-Solution-registry
+  - name: app-api
+    properties:
+      SUBSCRIPTION_URL: ~{app-protocol}://\${tenant_subdomain}-~{app-uri}
+  - name: Trade-Finance-Solution-destination
+  provides:
+  - name: mtx-api
+    properties:
+      mtx-url: ${default-url}
+  parameters:
+    disk-quota: 512M
+    instances: 1
+    memory: 256M
+  build-parameters:
+    builder: npm-ci
+  hooks:
+  - name: upgrade-all
+    type: task
+    phases:
+    - blue-green.application.before-start.idle
+    - deploy.application.before-start
+    parameters:
+      command: cds-mtx upgrade '*'
+      disk-quota: 768M
+      memory: 512M
+      name: upgrade
+- name: Trade-Finance-Solution
+  type: approuter.nodejs
+  path: .deploy/app-router
+  properties:
+    TENANT_HOST_PATTERN: ^(.*)-${default-uri}
+  requires:
+  - name: srv-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      name: srv-api
+      url: ~{srv-url}
+  - name: mtx-api
+    group: destinations
+    properties:
+      name: mtx-api
+      url: ~{mtx-url}
+  - name: Trade-Finance-Solution-auth
+  - name: Trade-Finance-Solution-destination
+  provides:
+  - name: app-api
+    properties:
+      app-protocol: ${protocol}
+      app-uri: ${default-uri}
+  parameters:
+    disk-quota: 256M
+    keep-existing-routes: true
+    memory: 256M
+- name: notification-content-deployment
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: Trade-Finance-Solution-destination
+  - name: Trade-Finance-Solution-auth
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    disk-quota: 1GB
+    memory: 256MB
+    no-route: true
+    no-start: true
+    tasks:
+    - command: node node_modules/@cap-js/notifications/lib/content-deployment.js
+      disk-quota: 1GB
+      memory: 256MB
+      name: notification-content-deployment
+- name: Trade-Finance-Solution-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Trade-Finance-Solution-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - comsmstradefinancebgbankguaranteemanagement.zip
+      name: comsmstradefinancebgbankguaranteemanagement
+      target-path: resources/
+    - artifacts:
+      - comcarvsoltradefinancelclc1.zip
+      name: comcarvsoltradefinancelclc1
+      target-path: resources/
+- name: comsmstradefinancebgbankguaranteemanagement
+  type: html5
+  path: app/bank-guarantee-management
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: comcarvsoltradefinancelclc1
+  type: html5
+  path: app/lc1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: Trade-Finance-Solution-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      oauth2-configuration:
+        credential-types:
+        - binding-secret
+        - x509
+        redirect-uris:
+        - https://*~{app-api/app-uri}/**
+      tenant-mode: shared
+      xsappname: Trade-Finance-Solution-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+  processed-after:
+  - Trade-Finance-Solution-messaging
+  requires:
+  - name: app-api
+- name: Trade-Finance-Solution-db
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: service-manager
+    service-plan: container
+- name: Trade-Finance-Solution-registry
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      appName: Trade-Finance-Solution-${org}-${space}
+      appUrls:
+        callbackTimeoutMillis: 300000
+        getDependencies: ~{mtx-api/mtx-url}/-/cds/saas-provisioning/dependencies
+        onSubscription: ~{mtx-api/mtx-url}/-/cds/saas-provisioning/tenant/{tenantId}
+        onSubscriptionAsync: true
+        onUnSubscriptionAsync: true
+        onUpdateDependenciesAsync: true
+      category: Category
+      description: A simple CAP project.
+      displayName: Trade-Finance-Solution
+      xsappname: Trade-Finance-Solution-${org}-${space}
+    service: saas-registry
+    service-plan: application
+  requires:
+  - name: mtx-api
+- name: Trade-Finance-Solution-messaging
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./event-mesh.json
+    service: enterprise-messaging
+    service-plan: default
+- name: Trade-Finance-Solution-connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
+    service-plan: lite
+- name: Trade-Finance-Solution-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
+          existing_destinations_policy: update
+    service: destination
+    service-plan: lite
+  requires:
+  - name: srv-api
+- name: Trade-Finance-Solution-auditlog
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: auditlog
+    service-plan: premium
+- name: Trade-Finance-Solution-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Trade-Finance-Solution-html5-service
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production

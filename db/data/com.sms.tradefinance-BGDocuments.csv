@@ -1,0 +1,6 @@
+ID,bg_ID,documentType,fileName,mediaType,storageKey,documentVersion,stage,mandatory,uploadedBy,uploadedAt,checksum,createdAt,createdBy,modifiedAt,modifiedBy
+BGDOC-0001,BG-REQ-0001,BG_APPLICATION,bg-application-0001.pdf,application/pdf,documents/bg/BG-REQ-0001/application-v1.pdf,1,SUBMISSION,true,aman.singh,2026-10-15T09:00:00,sha256:sample-checksum-001,2026-10-15T09:00:00,aman.singh,,
+BGDOC-0002,BG-REQ-0001,BENEFICIARY_FORMAT,beneficiary-format-0001.pdf,application/pdf,documents/bg/BG-REQ-0001/beneficiary-format-v1.pdf,1,REVIEW,true,maker.user,2026-10-15T09:15:00,sha256:sample-checksum-002,2026-10-15T09:15:00,maker.user,,
+BGDOC-0003,BG-REQ-0002,BOARD_APPROVAL,board-approval-0002.pdf,application/pdf,documents/bg/BG-REQ-0002/board-approval-v1.pdf,1,SUBMISSION,false,aman.singh,2026-10-15T10:00:00,sha256:sample-checksum-003,2026-10-15T10:00:00,aman.singh,,
+BGDOC-0004,BG-REQ-0003,BANK_CONFIRMATION,bank-confirmation-0003.pdf,application/pdf,documents/bg/BG-REQ-0003/bank-confirmation-v1.pdf,1,BANK_PROCESSING,false,approver.user,2026-10-15T10:30:00,sha256:sample-checksum-004,2026-10-15T10:30:00,approver.user,,
+BGDOC-0005,BG-REQ-0004,BENEFICIARY_RELEASE_LETTER,beneficiary-release-0004.pdf,application/pdf,documents/bg/BG-REQ-0004/beneficiary-release-v1.pdf,1,CLOSURE,true,maker.user,2026-10-15T11:00:00,sha256:sample-checksum-005,2026-10-15T11:00:00,maker.user,,

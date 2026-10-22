@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: com.carvsol.tradefinance.lc.lc1
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: ui5-task-zipper
+      afterTask: generateCachebusterInfo
+      configuration:
+        archiveName: comcarvsoltradefinancelclc1
+        relativePaths: true
+        additionalFiles:
+          - xs-app.json
+resources:
+  configuration:
+    propertiesFileSourceEncoding: UTF-8

@@ -1,0 +1,6 @@
+ID,boe_ID,documentType,fileName,mediaType,storageKey,mandatory,uploadedBy,uploadedAt,checksum,createdAt,createdBy,modifiedAt,modifiedBy
+BOEDOC-0001,BOE-0001,BOE_COPY,boe-copy-0001.pdf,application/pdf,documents/boe/BOE-0001/boe-copy.pdf,true,aman.singh,2026-10-15T09:00:00,sha256:sample-checksum-001,2026-10-15T09:00:00,aman.singh,,
+BOEDOC-0002,BOE-0001,INVOICE,invoice-0001.pdf,application/pdf,documents/boe/BOE-0001/invoice.pdf,true,maker.user,2026-10-15T09:10:00,sha256:sample-checksum-002,2026-10-15T09:10:00,maker.user,,
+BOEDOC-0003,BOE-0002,ACCEPTANCE_LETTER,acceptance-letter-0002.pdf,application/pdf,documents/boe/BOE-0002/acceptance-letter.pdf,true,aman.singh,2026-10-15T10:00:00,sha256:sample-checksum-003,2026-10-15T10:00:00,aman.singh,,
+BOEDOC-0004,BOE-0002,PURCHASE_ORDER,purchase-order-0002.pdf,application/pdf,documents/boe/BOE-0002/purchase-order.pdf,true,maker.user,2026-10-15T10:15:00,sha256:sample-checksum-004,2026-10-15T10:15:00,maker.user,,
+BOEDOC-0005,BOE-0003,OTHER,supporting-document-0003.pdf,application/pdf,documents/boe/BOE-0003/supporting-document.pdf,false,maker.user,2026-10-15T11:00:00,sha256:sample-checksum-005,2026-10-15T11:00:00,maker.user,,

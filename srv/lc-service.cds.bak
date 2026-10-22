@@ -1,0 +1,178 @@
+
+ using { com.sms.tradefinance as db } from '../db/schema';
+
+@requires: 'authenticated-user'
+service LCService {
+
+    /* ============================================================
+       LC REQUEST
+       ============================================================ */
+
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] },
+        { grant: 'CREATE', to: ['LCMaker', 'Admin'] },
+        { grant: 'UPDATE', to: ['LCMaker', 'Admin'] },
+        { grant: 'DELETE', to: ['Admin'] }
+    ]
+    entity LCRequests as projection on db.LCRequests;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCPOAllocations as projection on db.LCPOAllocations;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCAmountComponents as projection on db.LCAmountComponents;
+
+    /* ============================================================
+       BANK SELECTION
+       ============================================================ */
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCBankSelections as projection on db.LCBankSelections;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCBankSplits as projection on db.LCBankSplits;
+
+    /* ============================================================
+       APPROVAL NOTE
+       ============================================================ */
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCApprovalNotes as projection on db.LCApprovalNotes;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCApprovalNoteBanks as projection on db.LCApprovalNoteBanks;
+
+    /* ============================================================
+       BILL OF EXCHANGE
+       ============================================================ */
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCBillOfExchanges as projection on db.LCBillOfExchanges;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity BOEInvoiceAllocations as projection on db.BOEInvoiceAllocations;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity BOEDocuments as projection on db.BOEDocuments;
+
+    /* ============================================================
+       FOREIGN LC DOCUMENTS
+       ============================================================ */
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity FLCImportDocuments as projection on db.FLCImportDocuments;
+
+    /* ============================================================
+       ACCOUNTING
+       ============================================================ */
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCAccountingReferences as projection on db.LCAccountingReferences;
+
+    /* ============================================================
+       STATUS / CLOSURE
+       ============================================================ */
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCStatusHistories as projection on db.LCStatusHistories;
+
+    @readonly
+    @restrict: [
+        { grant: 'READ', to: ['LCMaker', 'LCApprover', 'Admin', 'ReadOnly'] }
+    ]
+    entity LCClosures as projection on db.LCClosures;
+
+    /* ============================================================
+       MAKER ACTIONS
+       ============================================================ */
+
+    @requires: 'LCMaker'
+    action submitLC(lcId : UUID) returns String;
+
+    @requires: 'LCMaker'
+    action selectBank(
+        lcId : UUID,
+        bankId : UUID
+    ) returns String;
+
+    @requires: 'LCMaker'
+    action createApprovalNote(lcId : UUID) returns String;
+
+    @requires: 'LCMaker'
+    action createBoE(lcId : UUID) returns UUID;
+
+    /* ============================================================
+       APPROVER ACTIONS
+       ============================================================ */
+
+    @requires: 'LCApprover'
+    action approveLC(
+        lcId : UUID,
+        remarks : String
+    ) returns String;
+
+    @requires: 'LCApprover'
+    action rejectLC(
+        lcId : UUID,
+        reason : String
+    ) returns String;
+
+    @requires: 'LCApprover'
+    action sendBackLC(
+        lcId : UUID,
+        reason : String
+    ) returns String;
+
+    @requires: 'LCApprover'
+    action acceptBoE(boeId : UUID) returns String;
+
+    @requires: 'LCApprover'
+    action closeLC(lcId : UUID) returns String;
+
+    /* ============================================================
+       CONTROLLED OPERATIONS
+       Confirm actual workflow ownership before production.
+       ============================================================ */
+
+    @requires: 'LCApprover'
+    action reserveBankLimit(lcId : UUID) returns String;
+
+    @requires: 'LCApprover'
+    action sendToBank(lcId : UUID) returns String;
+}

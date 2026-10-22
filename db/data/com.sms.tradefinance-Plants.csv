@@ -1,0 +1,7 @@
+ID,code,name,companyCode_ID,address,active,createdAt,createdBy,modifiedAt,modifiedBy
+a20e8400-e29b-41d4-a716-446655440006,PLANT1100,Mock S4 Plant 1100,COMP-001,Mock S4 Plant,true,2026-10-06T09:00:00Z,system,,
+a20e8400-e29b-41d4-a716-446655440001,PLANT001,Noida Manufacturing Plant,550e8400-e29b-41d4-a716-446655440001,"Sector 63, Noida, Uttar Pradesh, India",true,2026-10-01T09:00:00Z,system,2026-10-01T09:00:00Z,system
+a20e8400-e29b-41d4-a716-446655440002,PLANT002,Ghaziabad Industrial Plant,550e8400-e29b-41d4-a716-446655440002,"Sahibabad Industrial Area, Ghaziabad, Uttar Pradesh, India",true,2026-10-02T09:00:00Z,system,2026-10-02T09:00:00Z,system
+a20e8400-e29b-41d4-a716-446655440003,PLANT003,Chennai Operations Plant,550e8400-e29b-41d4-a716-446655440001,"Guindy Industrial Estate, Chennai, Tamil Nadu, India",true,2026-10-03T09:00:00Z,system,2026-10-03T09:00:00Z,system
+a20e8400-e29b-41d4-a716-446655440004,PLANT004,Pune Assembly Plant,550e8400-e29b-41d4-a716-446655440003,"Chakan Industrial Area, Pune, Maharashtra, India",false,2026-10-04T09:00:00Z,system,2026-10-04T09:00:00Z,system
+a20e8400-e29b-41d4-a716-446655440005,PLANT005,Mumbai Logistics Plant,550e8400-e29b-41d4-a716-446655440002,"Andheri East, Mumbai, Maharashtra, India",true,2026-10-05T09:00:00Z,system,2026-10-05T09:00:00Z,system

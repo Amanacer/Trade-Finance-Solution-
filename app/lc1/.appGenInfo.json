@@ -1,0 +1,32 @@
+{
+  "generationParameters": {
+    "generationDate": "Mon Oct 19 2026 05:15:21 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/odata/v4/lc/",
+    "appName": "lc1",
+    "appTitle": "Foreign Letter of Credit",
+    "appDescription": "Foreign Letter of Credit Management Application",
+    "appNamespace": "com.carvsol.tradefinance.lc",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.153.0",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.33.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "LCRequests"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "None"
+      }
+    ],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/com.carvsol.tradefinance.lc.lc1/index.html"
+  }
+}

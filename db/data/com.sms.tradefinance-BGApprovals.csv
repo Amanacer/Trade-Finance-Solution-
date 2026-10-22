@@ -1,0 +1,6 @@
+ID,bg_ID,sequence,role,action,userId,actionAt,remarks,sendBackReason,status,createdAt,createdBy,modifiedAt,modifiedBy
+BGA-0001,BG-REQ-0001,1,BG_MAKER,SUBMIT,aman.singh,2026-10-15T09:00:00,BG request submitted,,SUBMITTED,2026-10-15T09:00:00,aman.singh,,
+BGA-0002,BG-REQ-0001,2,BG_APPROVER,APPROVE,approver.user,2026-10-15T09:30:00,BG request approved,,APPROVED,2026-10-15T09:30:00,approver.user,,
+BGA-0003,BG-REQ-0002,1,BG_MAKER,SUBMIT,maker.user,2026-10-15T10:00:00,BG request submitted,,SUBMITTED,2026-10-15T10:00:00,maker.user,,
+BGA-0004,BG-REQ-0002,2,BG_APPROVER,SEND_BACK,approver.user,2026-10-15T10:20:00,BG details require correction,Beneficiary details are incomplete,SENT_BACK,2026-10-15T10:20:00,approver.user,,
+BGA-0005,BG-REQ-0003,2,BG_APPROVER,,,,Awaiting approval,,,2026-10-15T11:00:00,system,,

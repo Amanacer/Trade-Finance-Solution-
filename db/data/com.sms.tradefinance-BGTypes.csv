@@ -1,0 +1,6 @@
+ID,code,name,active,createdAt,createdBy,modifiedAt,modifiedBy
+BGTYPE-001,EMD,Bid Security (EMD),true,2026-10-15T09:00:00,aman.singh,,
+BGTYPE-002,PERFORMANCE,Performance Guarantee,true,2026-10-15T09:05:00,aman.singh,,
+BGTYPE-003,SECURITY_DEPOSIT,Security Deposit,true,2026-10-15T09:10:00,aman.singh,,
+BGTYPE-004,MOBILIZATION_ADVANCE,Mobilization Advance,true,2026-10-15T09:15:00,aman.singh,,
+BGTYPE-005,RETENTION,Retention Guarantee,true,2026-10-15T09:20:00,aman.singh,,

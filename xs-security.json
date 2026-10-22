@@ -1,0 +1,159 @@
+
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.mtcallback",
+      "description": "Subscription via SaaS Registry",
+      "grant-as-authority-to-apps": [
+        "$XSAPPNAME(application,sap-provisioning,tenant-onboarding)"
+      ]
+    },
+    {
+      "name": "$XSAPPNAME.emcallback",
+      "description": "Enterprise-Messaging Callback Access",
+      "grant-as-authority-to-apps": [
+        "$XSSERVICENAME(Trade-Finance-Solution-messaging)"
+      ]
+    },
+    {
+      "name": "$XSAPPNAME.emmanagement",
+      "description": "Enterprise-Messaging Management Access"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Trade Finance Administrator"
+    },
+    {
+      "name": "$XSAPPNAME.LCMaker",
+      "description": "Create and manage LC requests"
+    },
+    {
+      "name": "$XSAPPNAME.LCApprover",
+      "description": "Approve and reject LC requests"
+    },
+    {
+      "name": "$XSAPPNAME.Finance",
+      "description": "Verify foreign LC acceptance and reconcile payment"
+    },
+    {
+      "name": "$XSAPPNAME.BGMaker",
+      "description": "Create and manage BG requests"
+    },
+    {
+      "name": "$XSAPPNAME.BGApprover",
+      "description": "Approve and reject BG requests"
+    },
+    {
+      "name": "$XSAPPNAME.BGSeniorApprover",
+      "description": "Approve BG requests as senior approver"
+    },
+    {
+      "name": "$XSAPPNAME.BGFinanceApprover",
+      "description": "Approve BG requests as finance approver"
+    },
+    {
+      "name": "$XSAPPNAME.BGAuthorizedSignatory",
+      "description": "Approve BG requests as authorized signatory"
+    },
+    {
+      "name": "$XSAPPNAME.IntegrationOperator",
+      "description": "Operate authorized integrations"
+    },
+    {
+      "name": "$XSAPPNAME.ReadOnly",
+      "description": "Read permitted business information"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Admin",
+      "description": "Trade Finance Administrator",
+      "scope-references": [
+        "$XSAPPNAME.Admin",
+        "$XSAPPNAME.LCMaker",
+        "$XSAPPNAME.LCApprover",
+        "$XSAPPNAME.Finance",
+        "$XSAPPNAME.BGMaker",
+        "$XSAPPNAME.BGApprover",
+        "$XSAPPNAME.IntegrationOperator",
+        "$XSAPPNAME.ReadOnly"
+      ]
+    },
+    {
+      "name": "LCMaker",
+      "description": "LC Maker",
+      "scope-references": [
+        "$XSAPPNAME.LCMaker"
+      ]
+    },
+    {
+      "name": "LCApprover",
+      "description": "LC Approver",
+      "scope-references": [
+        "$XSAPPNAME.LCApprover"
+      ]
+    },
+    {
+      "name": "Finance",
+      "description": "Foreign LC Finance",
+      "scope-references": [
+        "$XSAPPNAME.Finance"
+      ]
+    },
+    {
+      "name": "BGMaker",
+      "description": "BG Maker",
+      "scope-references": [
+        "$XSAPPNAME.BGMaker"
+      ]
+    },
+    {
+      "name": "BGApprover",
+      "description": "BG Approver",
+      "scope-references": [
+        "$XSAPPNAME.BGApprover"
+      ]
+    },
+    {
+      "name": "BGSeniorApprover",
+      "description": "BG Senior Approver",
+      "scope-references": [
+        "$XSAPPNAME.BGSeniorApprover"
+      ]
+    },
+    {
+      "name": "BGFinanceApprover",
+      "description": "BG Finance Approver",
+      "scope-references": [
+        "$XSAPPNAME.BGFinanceApprover"
+      ]
+    },
+    {
+      "name": "BGAuthorizedSignatory",
+      "description": "BG Authorized Signatory",
+      "scope-references": [
+        "$XSAPPNAME.BGAuthorizedSignatory"
+      ]
+    },
+    {
+      "name": "IntegrationOperator",
+      "description": "Integration Operator",
+      "scope-references": [
+        "$XSAPPNAME.IntegrationOperator"
+      ]
+    },
+    {
+      "name": "ReadOnly",
+      "description": "Read-only User",
+      "scope-references": [
+        "$XSAPPNAME.ReadOnly"
+      ]
+    }
+  ],
+  "authorities-inheritance": false,
+  "authorities": [
+    "$XSAPPNAME.emmanagement",
+    "$XSAPPNAME.mtcallback"
+  ]
+}

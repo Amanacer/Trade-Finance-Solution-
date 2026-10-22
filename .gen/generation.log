@@ -1,0 +1,47 @@
+Starting CAP Project Generator...
+Using @sap/cds-dk [10.1.2] from /extbin/globals/bun/global/install/node_modules/@sap/cds-dk
+Using @sap/generator-cap-project [2.1.3] from [/extbin/globals/bun/global/install/node_modules/@sap/generator-cap-project]
+Using root path [/home/user/projects]
+
+Creating project with approuter, audit-logging, connectivity, destination, enterprise-messaging, hana, mta, multitenancy, nodejs, notifications, pipeline, xsuaa
+
+Adding facet: nodejs
+Adding facet: mta
+Adding facet: xsuaa
+Adding facet: hana
+Adding facet: multitenancy
+Adding facet: approuter
+Adding facet: enterprise-messaging
+Adding facet: connectivity
+Adding facet: destination
+Adding facet: audit-logging
+Adding facet: notifications
+Adding facet: pipeline
+
+Successfully initialized CAP project
+Continue with: code Trade-Finance-Solution 
+for information on project "Piper" and its pipelines see https://www.project-piper.io/
+
+
+Installing dependencies...
+
+added 178 packages, and audited 290 packages in 18s
+
+39 packages are looking for funding
+  run `npm fund` for details
+
+11 vulnerabilities (9 high, 2 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Finished installing dependencies
+
+Done setting up project Trade-Finance-Solution
+Project is ready to use
+

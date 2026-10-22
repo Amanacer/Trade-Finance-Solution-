@@ -1,0 +1,6 @@
+ID,code,name,active,createdAt,createdBy,modifiedAt,modifiedBy
+VERT-001,INFRA,Infrastructure,true,2026-10-15T09:00:00Z,system,2026-10-15T09:00:00Z,system
+VERT-002,MINING,Mining,true,2026-10-15T09:05:00Z,system,2026-10-15T09:05:00Z,system
+VERT-003,ENVIRONMENT,Environment,true,2026-10-15T09:10:00Z,system,2026-10-15T09:10:00Z,system
+VERT-004,ELECTRICAL,Electrical,true,2026-10-15T09:15:00Z,system,2026-10-15T09:15:00Z,system
+VERT-005,HO,Head Office,true,2026-10-15T09:20:00Z,system,2026-10-15T09:20:00Z,system

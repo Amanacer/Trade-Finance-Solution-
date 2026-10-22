@@ -1,0 +1,6 @@
+ID,bank_ID,branchCode,branchName,address,swiftBic,active,createdAt,createdBy,modifiedAt,modifiedBy
+BR-0001,BANK-0001,DEL001,New Delhi Main Branch,Connaught Place New Delhi,SBININBB001,true,2026-10-15T09:00:00,system,,
+BR-0002,BANK-0001,NOI001,Noida Branch,Sector 18 Noida,SBININBB002,true,2026-10-15T09:00:00,system,,
+BR-0003,BANK-0002,MUM001,Mumbai Main Branch,Bandra Kurla Complex Mumbai,HDFCINBB001,true,2026-10-15T09:00:00,system,,
+BR-0004,BANK-0003,BAN001,Bengaluru Branch,MG Road Bengaluru,ICICINBB001,true,2026-10-15T09:00:00,system,,
+BR-0005,BANK-0002,GUR001,Gurugram Branch,Cyber City Gurugram,HDFCINBB002,false,2026-10-15T09:00:00,system,,

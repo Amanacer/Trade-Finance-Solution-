@@ -1,0 +1,6 @@
+ID,processType,businessObjectType,businessObjectId,stage,sequence,role,assignedTo,action,status,remarks,sendBackReason,startedAt,actionAt,createdAt,createdBy,modifiedAt,modifiedBy
+BG-WF-0001,BG,BGRequests,BG-REQ-0001,SUBMISSION,1,BG_MAKER,aman.singh,SUBMIT,COMPLETED,BG request submitted for approval,,2026-10-15T09:00:00,2026-10-15T09:00:00,2026-10-15T08:45:00,aman.singh,2026-10-15T09:00:00,aman.singh
+BG-WF-0002,BG,BGRequests,BG-REQ-0001,APPROVAL,2,BG_APPROVER,approver.user,APPROVE,COMPLETED,BG request approved,,2026-10-15T09:00:00,2026-10-15T09:20:00,2026-10-15T09:00:00,aman.singh,2026-10-15T09:20:00,approver.user
+BG-WF-0003,BG,BGRequests,BG-REQ-0002,APPROVAL,2,BG_APPROVER,approver.user,SEND_BACK,COMPLETED,Please correct beneficiary details,Beneficiary details are incomplete,2026-10-15T10:00:00,2026-10-15T10:15:00,2026-10-15T09:45:00,maker.user,2026-10-15T10:15:00,approver.user
+BG-WF-0004,BG,BGRequests,BG-REQ-0003,APPROVAL,2,BG_APPROVER,approver.user,,PENDING,Awaiting approval,,2026-10-15T11:00:00,,2026-10-15T10:50:00,maker.user,,
+BG-WF-0005,BG,BGRequests,BG-REQ-0004,APPROVAL,2,BG_APPROVER,approver.user,REJECT,COMPLETED,BG request rejected,Required documents are missing,2026-10-15T12:00:00,2026-10-15T12:20:00,2026-10-15T11:45:00,maker.user,2026-10-15T12:20:00,approver.user

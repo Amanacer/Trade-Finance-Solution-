@@ -1,0 +1,8 @@
+ID,fromCurrency,toCurrency,rate,rateType,rateDate,source,capturedAt,capturedBy,active,createdAt,createdBy,modifiedAt,modifiedBy
+FX-0006,SGD,INR,68.50,SPOT,2026-10-15,DemoSeed,2026-10-15T09:20:00,finance,true,2026-10-15T09:20:00,finance,,
+FX-0007,JPY,INR,0.58,SPOT,2026-10-15,DemoSeed,2026-10-15T09:25:00,finance,true,2026-10-15T09:25:00,finance,,
+FX-0001,USD,INR,88.75,SPOT,2026-10-15,Manual,2026-10-15T09:00:00,aman.singh,true,2026-10-15T09:00:00,aman.singh,,
+FX-0002,EUR,INR,102.50,SPOT,2026-10-15,Manual,2026-10-15T09:05:00,aman.singh,true,2026-10-15T09:05:00,aman.singh,,
+FX-0003,GBP,INR,118.25,SPOT,2026-10-15,Manual,2026-10-15T09:10:00,aman.singh,true,2026-10-15T09:10:00,aman.singh,,
+FX-0004,INR,USD,0.01127,SPOT,2026-10-15,Manual,2026-10-15T09:15:00,aman.singh,true,2026-10-15T09:15:00,aman.singh,,
+FX-0005,USD,INR,88.50,MONTH_END,2026-09-30,FinanceUpload,2026-10-01T10:00:00,finance.user,true,2026-10-01T10:00:00,finance.user,,

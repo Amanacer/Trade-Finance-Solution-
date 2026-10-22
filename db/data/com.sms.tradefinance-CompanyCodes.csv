@@ -1,0 +1,6 @@
+ID,code,name,address,currency,active,createdAt,createdBy,modifiedAt,modifiedBy
+COMP-001,SMS-1000,SMS Limited,"New Delhi, India",INR,true,2026-10-15T09:00:00,aman.singh,,
+COMP-002,SMS-2000,SMS Infrastructure Pvt Ltd,"Noida, Uttar Pradesh, India",INR,true,2026-10-15T09:05:00,aman.singh,,
+COMP-003,SMS-3000,SMS Mining Division,"Dhanbad, Jharkhand, India",INR,true,2026-10-15T09:10:00,aman.singh,,
+COMP-004,SMS-4000,SMS Electrical Projects,"Gurugram, Haryana, India",INR,true,2026-10-15T09:15:00,aman.singh,,
+COMP-005,SMS-5000,SMS Legacy Unit,"Jaipur, Rajasthan, India",INR,false,2026-10-15T09:20:00,aman.singh,,
